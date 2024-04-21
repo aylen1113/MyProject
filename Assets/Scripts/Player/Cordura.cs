@@ -15,7 +15,7 @@ public class Cordura : MonoBehaviour
     void Start()
     {
         Sanity = MaxSanity;
-        //sanitybar.startHealthBar(Sanity);
+        sanitybar.startSanityBar(Sanity);
         //Debug.Log("Nivel de cordura: " + Sanity);
     }
 
@@ -23,6 +23,7 @@ public class Cordura : MonoBehaviour
     void Update()
     {
         RecuperarSanidad();
+        SacarSanidad();
     }
     #endregion
 
@@ -41,7 +42,17 @@ public class Cordura : MonoBehaviour
                 Sanity += SanityHealer;
             }
             sanitybar.SetSanity(Sanity);
-            //Debug.Log("El nuevo nivel de sanidad es:" + Sanity);
+            Debug.Log("El nuevo nivel de sanidad es:" + Sanity);
+            //collision.gameObject.SetActive(false);
+        }
+    }
+    public void SacarSanidad() //para testear la mecanica de la sanidad nomás
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Sanity = Sanity - 2.0f;
+            sanitybar.SetSanity(Sanity);
+            Debug.Log("El nuevo nivel de sanidad es:" + Sanity);
             //collision.gameObject.SetActive(false);
         }
     }
