@@ -60,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
         //desplaza el rigidbody hacia la direccion que se esté mirando con la velocidad configurada
         rb.AddForce(direccion.normalized * speedsprint * 10f, ForceMode.Force); // *10f para hacerlo un poco más rápido
 
+      
+
     }
 
     //para controlar que no se pase la velocidad.
