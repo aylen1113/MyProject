@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //NOTA: por alguna razón a veces puede salir volando el player,a hay q ver cómo arreglarlo!!
+    //Tmb el player hace fuerza contra el piso por la direccion de la camara y eso hace q se vea raro el movimiento
+    //(como q está saltando o glitcheado), si alguno sabe solucionarlo agreguen nomás:P
+    //cualquier cosa directamente sacamos q se pueda ver desde arriba con la cámara y la dejamos bastante fija
 
     [Header("Movimiento")]
     public float rapidezDesplazamiento = 10.0f;
@@ -13,10 +16,12 @@ public class PlayerMovement : MonoBehaviour
     Vector3 direccion;
     public Transform Orientation;
     [SerializeField] Rigidbody rb;
+    bool grounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
@@ -29,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
         //horizontalMovement *= Time.deltaTime;
 
         //transform.Translate(horizontalMovement, 0, forwardMovement);
+    }
+
+    private void FixedUpdate()
+    {
         movimiento();
         speedControl();
     }
@@ -50,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
         //desplaza el rigidbody hacia la direccion que se esté mirando con la velocidad configurada
         rb.AddForce(direccion.normalized * speedsprint * 10f, ForceMode.Force); // *10f para hacerlo un poco más rápido
+
     }
 
     //para controlar que no se pase la velocidad.
@@ -62,5 +72,17 @@ public class PlayerMovement : MonoBehaviour
             Vector3 LimitedVel = flatVelocity.normalized * rapidezDesplazamiento; //calcula la max velocidad que se puede alcanzar
             rb.velocity = new Vector3(LimitedVel.x, rb.velocity.y, LimitedVel.z); //y la aplica
         }
+        //if (grounded == true)
+        //{
+        //    rb.y = 0f;
+        //}
     }
+
+    //private void OnCollisionEnter(Collision collision) //intentando solucionar lo de la fuerza contra el piso</3
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        grounded = true;
+    //    }
+    //}
 }
