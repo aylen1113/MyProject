@@ -6,10 +6,13 @@ public class EnemyMovement : MonoBehaviour
     public float detectionDistance = 5f; 
 
     private Transform player;
-
+    public PlayerHealth playerHealth;
+    public int life = 1;
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>().transform;
+        playerHealth = FindObjectOfType<PlayerHealth>();
+
     }
 
     void Update()
@@ -24,20 +27,19 @@ public class EnemyMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-    
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-
-            //if (playerHealth != null)
-            //{
-            //    playerHealth.TakeDamage(damage);
-            //}
-            speed = 0f;
-
-        }
-    }
 }
+//    void OnCollisionEnter(Collision collision)
+//    {
+
+//        if (collision.gameObject.CompareTag("Player"))
+//        {
+
+//            if (playerHealth != null)
+//            {
+//                playerHealth.TakeDamage();
+//            }
+//            speed = 0f;
+
+//        }
+//    }
+//}
