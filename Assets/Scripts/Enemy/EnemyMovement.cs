@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -7,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform player;
     public PlayerHealth playerHealth;
-    public int life = 1;
+ 
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>().transform;
@@ -27,19 +30,19 @@ public class EnemyMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
     }
+
+void OnCollisionEnter(Collision collision)
+{
+
+    if (collision.gameObject.CompareTag("Player"))
+    {
+
+        if (playerHealth != null)
+        {
+                playerHealth.TakeDamage();
+        }
+        speed = 0f;
+
+    }
 }
-//    void OnCollisionEnter(Collision collision)
-//    {
-
-//        if (collision.gameObject.CompareTag("Player"))
-//        {
-
-//            if (playerHealth != null)
-//            {
-//                playerHealth.TakeDamage();
-//            }
-//            speed = 0f;
-
-//        }
-//    }
-//}
+}

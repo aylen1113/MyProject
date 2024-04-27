@@ -16,10 +16,11 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage();
+            Debug.Log("Damage");
         }
     }
 
-    void TakeDamage()
+  public  void TakeDamage()
     {
         currentLives--;
 
