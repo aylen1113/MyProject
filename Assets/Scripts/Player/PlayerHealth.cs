@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 3;
-    private int currentLives;
+    public int currentLives;
 
     private void Start()
     {

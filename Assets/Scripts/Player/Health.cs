@@ -7,35 +7,74 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 
 {
-    public Sprite full, empty;
-    Image plushieImage;
+    //    public Sprite full, empty;
+    //    Image plushieImage;
 
 
-    private void Awake()
+    //    private void Awake()
+    //    {
+    //       plushieImage = GetComponent<Image>();
+    //    }
+    //    public void SetImage(HealthStatus status)
+    //    {
+    //        switch (status) {
+
+    //            case HealthStatus.Empty:
+    //            plushieImage.sprite = empty;
+    //            break;
+
+    //            case HealthStatus.Full:
+    //            plushieImage.sprite = full;
+    //            break;
+
+
+
+
+    //        }
+    //    }
+    //}
+    //public enum HealthStatus
+    //{
+    //    Empty = 0,
+    //    Full = 1,
+    //}
+
+    public int health;
+    public int numOfHearts;
+    //public PlayerHealth current;
+
+    public Image[] hearts;
+    public Sprite fullPlushie;
+    public Sprite emptyPlushie;
+
+    private void Start()
     {
-       plushieImage = GetComponent<Image>();
+        GetComponent<PlayerHealth>().currentLives = health;
+        //PlayerHealth = FindObjectOfType<PlayerHealth>();
     }
-    public void SetImage(HealthStatus status)
+
+    private void Update()
     {
-        switch (status) {
+        if (health > numOfHearts)
+        {
+            health = numOfHearts;
+        }
+        ChequeoPlushies();
+    }
 
-            case HealthStatus.Empty:
-            plushieImage.sprite = empty;
-            break;
+    public void ChequeoPlushies ()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < health)
+                hearts[i].sprite = fullPlushie;
+            else
+                hearts[i].sprite = emptyPlushie;
 
-            case HealthStatus.Full:
-            plushieImage.sprite = full;
-            break;
-
-
-
-
+            if (i < numOfHearts)
+                hearts[i].enabled = true;
+            else
+                hearts[i].enabled = false;
         }
     }
 }
-public enum HealthStatus
-{
-    Empty = 0,
-    Full = 1,
-}
-

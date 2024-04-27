@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour
         for(int i = 0;i < plushies.Count; i++)
         {
             int plushieStatusRemainder = Mathf.Clamp(playerHealth.maxHealth - (i * 1), 0, 1);
-            plushies[i].SetImage((HealthStatus)plushieStatusRemainder);
+            //plushies[i].SetImage((HealthStatus)plushieStatusRemainder);
         }
 }
 
@@ -35,7 +35,7 @@ public class HealthBar : MonoBehaviour
         newPlushie.transform.SetParent(transform);
 
         Health plushieComponent = newPlushie.GetComponent<Health>();
-        plushieComponent.SetImage(HealthStatus.Empty);
+        //plushieComponent.SetImage(HealthStatus.Empty);
         plushies.Add(plushieComponent);
 
 
