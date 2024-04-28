@@ -15,7 +15,7 @@ namespace interfaz
         }
         public void Menu()
         {
-            SceneManager.LoadScene("Menú");
+            SceneManager.LoadScene("Menu");
         }
         public void PlayButton()
         {
