@@ -4,12 +4,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Lógica")]
     public int maxHealth = 3;
     public int currentLives;
 
     //public int health;
     //public int numOfHearts;
 
+    [Header("UI")]
     public Image[] hearts;
     public Sprite fullPlushie;
     public Sprite emptyPlushie;
@@ -28,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
         ChequeoPlushies();
     }
 
+    #region Code
     private void OnCollissionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -68,4 +71,5 @@ public class PlayerHealth : MonoBehaviour
                 hearts[i].enabled = false;
         }
     }
+    #endregion
 }
