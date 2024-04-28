@@ -11,6 +11,6 @@ public class Camera25D : MonoBehaviour
         Vector3 cameraPosition = _mainCamera.transform.position;
         cameraPosition.y = transform.position.y;
         transform.LookAt(cameraPosition);
-        transform.Rotate(0f, 90f, 0f);
+        transform.Rotate(0f, 180f, 0f);
     }
 }
