@@ -61,6 +61,7 @@ public class Health : MonoBehaviour
         }
         ChequeoPlushies();
     }
+    //HOLA
 
     public void ChequeoPlushies ()
     {
