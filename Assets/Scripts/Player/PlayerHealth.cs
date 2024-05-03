@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    //cambio nuevo
     [Header("Lógica")]
     public int maxHealth = 3;
     public int currentLives;
