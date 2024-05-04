@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -31,8 +32,7 @@ public class PlayerHealth : MonoBehaviour
         ChequeoPlushies();
     }
 
-    #region Code
-    private void OnCollissionEnter(Collision collision)
+    void OnCollissionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
@@ -41,20 +41,17 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-  public  void TakeDamage()
-  {
+    public void TakeDamage()
+    {
         currentLives--;
 
         if (currentLives <= 0)
         {
+            SceneManager.LoadScene("GameOverScreen");
             Debug.Log("Game Over");
-     
+
         }
-        else
-        {
-            Debug.Log("Lost a life. Lives left: " + currentLives);
-      
-        }
+
     }
 
     public void ChequeoPlushies()
@@ -71,6 +68,6 @@ public class PlayerHealth : MonoBehaviour
             else
                 hearts[i].enabled = false;
         }
+
     }
-    #endregion
 }
