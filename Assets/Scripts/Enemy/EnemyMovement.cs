@@ -10,12 +10,15 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform player;
     public PlayerHealth playerHealth;
+
+    private AudioSource playerAudioSource;
+    [SerializeField] AudioClip enemyHitSound;
  
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>().transform;
         playerHealth = FindObjectOfType<PlayerHealth>();
-
+        playerAudioSource = player.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -31,18 +34,21 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-void OnCollisionEnter(Collision collision)
-{
-
-    if (collision.gameObject.CompareTag("Player"))
+    void OnCollisionEnter(Collision collision)
     {
 
-        if (playerHealth != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
+            if (playerHealth != null)
+            {
                 playerHealth.TakeDamage();
-        }
-        speed = 0f;
 
+                if (enemyHitSound != null && playerAudioSource != null)
+                {
+                    playerAudioSource.PlayOneShot(enemyHitSound);
+                }
+            }
+            speed = 0f;
+        }
     }
-}
 }
