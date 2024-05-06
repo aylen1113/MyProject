@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4783,8 +4783,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0008067502, y: 0.99615216, z: 0.009221286, w: -0.08715123}
-  m_LocalPosition: {x: -0.070990205, y: 9.97, z: -102.23128}
+  m_LocalRotation: {x: 0.000806751, y: 0.99615216, z: 0.009221286, w: -0.087151304}
+  m_LocalPosition: {x: -0.070990205, y: 9.684, z: -102.23128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6107,8 +6107,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1525737963}
-  m_Follow: {fileID: 1525737963}
+  m_LookAt: {fileID: 2128531208}
+  m_Follow: {fileID: 2128531208}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -6132,7 +6132,7 @@ MonoBehaviour:
     Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 0
-    m_AccelTime: 0.2
+    m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
@@ -6156,7 +6156,7 @@ MonoBehaviour:
     Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 300
-    m_AccelTime: 0.05
+    m_AccelTime: 0.02
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
@@ -6203,7 +6203,7 @@ Transform:
   m_GameObject: {fileID: 1330617330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.070990205, y: 9.97, z: -102.23128}
+  m_LocalPosition: {x: -0.070990205, y: 9.684, z: -102.23128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6629,7 +6629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492000000}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0008067511, y: 0.9961521, z: 0.009221288, w: -0.087151244}
+  m_LocalRotation: {x: 0.00080675137, y: 0.9961521, z: 0.009221288, w: -0.08715128}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6637,11 +6637,6 @@ Transform:
   - {fileID: 600663781}
   m_Father: {fileID: 1330617332}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1525737963 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9023073682476171562, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
-  m_PrefabInstance: {fileID: 6856841409580642244}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1559563094
 GameObject:
   m_ObjectHideFlags: 0
@@ -7736,7 +7731,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1525737963}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
@@ -8426,6 +8421,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &2128531208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 390637962104773710, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
+  m_PrefabInstance: {fileID: 6856841409580642244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2142433702
 GameObject:
   m_ObjectHideFlags: 0
@@ -8546,7 +8546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 390637962104773710, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.68
+      value: 9.394
       objectReference: {fileID: 0}
     - target: {fileID: 390637962104773710, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8620,6 +8620,22 @@ PrefabInstance:
       propertyPath: _mainCamera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 5380439135908267783, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
+      propertyPath: m_Height
+      value: 1.9579363
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380439135908267783, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
+      propertyPath: m_Center.y
+      value: 0.10034227
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600868257510456812, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
+      propertyPath: m_Height
+      value: 1.8348268
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600868257510456812, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
+      propertyPath: m_Center.y
+      value: 0.08258661
+      objectReference: {fileID: 0}
     - target: {fileID: 9185324547542726300, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
       propertyPath: m_Layer
       value: 0
