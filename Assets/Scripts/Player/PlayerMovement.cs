@@ -18,23 +18,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rb;
     bool grounded;
 
+    [Header("animacion pj")] 
+
+    private Animator animator;
+    Vector3 Playermov;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        animator = GetComponentInChildren<Animator>(); //esto es para la animación del pj!!
     }
 
-
-    void Update()
-    {
-        //float forwardMovement = Input.GetAxis("Vertical") * speed;
-        //float horizontalMovement = Input.GetAxis("Horizontal") * speed;
-
-        //forwardMovement *= Time.deltaTime;
-        //horizontalMovement *= Time.deltaTime;
-
-        //transform.Translate(horizontalMovement, 0, forwardMovement);
-    }
 
     private void FixedUpdate()
     {
@@ -60,7 +55,9 @@ public class PlayerMovement : MonoBehaviour
         //desplaza el rigidbody hacia la direccion que se esté mirando con la velocidad configurada
         rb.AddForce(direccion.normalized * speedsprint * 10f, ForceMode.Force); // *10f para hacerlo un poco más rápido
 
-      
+        Playermov = new Vector2(movimientoCostados, movimientoAdelanteAtras).normalized; //.normalized para normalizar el num del vector
+        animator.SetFloat("Horizontal", 0); 
+        animator.SetFloat("Correr", 1);
 
     }
 
@@ -80,11 +77,5 @@ public class PlayerMovement : MonoBehaviour
         //}
     }
 
-    //private void OnCollisionEnter(Collision collision) //intentando solucionar lo de la fuerza contra el piso</3
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        grounded = true;
-    //    }
-    //}
+  
 }
