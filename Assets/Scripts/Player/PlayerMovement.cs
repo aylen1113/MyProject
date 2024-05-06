@@ -23,14 +23,21 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     Vector3 Playermov;
 
-    void Start()
+    public CharacterController controller;
+    private Vector2 playerMove;
+
+ private void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         animator = GetComponentInChildren<Animator>(); //esto es para la animación del pj!!
     }
 
-
+    private void Update()
+    {
+        playerMove = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        animator.SetFloat("Speed", playerMove.magnitude);
+    }
     private void FixedUpdate()
     {
         movimiento();
