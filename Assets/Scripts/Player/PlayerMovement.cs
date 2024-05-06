@@ -26,11 +26,15 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     private Vector2 playerMove;
 
- private void Start()
+    [SerializeField] AudioClip walkingSound;
+    private AudioSource audioSource;
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         animator = GetComponentInChildren<Animator>(); //esto es para la animación del pj!!
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -42,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movimiento();
         speedControl();
+        WalkingSound();
     }
 
     void movimiento()
@@ -65,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
         Playermov = new Vector2(movimientoCostados, movimientoAdelanteAtras).normalized; //.normalized para normalizar el num del vector
         animator.SetFloat("Horizontal", 0); 
         animator.SetFloat("Correr", 1);
-
     }
 
     //para controlar que no se pase la velocidad.
@@ -84,5 +88,25 @@ public class PlayerMovement : MonoBehaviour
         //}
     }
 
-  
+    private void WalkingSound()
+    {
+        // Verificar si el jugador está caminando
+        bool estaCaminando = Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
+
+        // Si el jugador está caminando y hay un sonido asignado
+        if (estaCaminando && walkingSound != null && !audioSource.isPlaying)
+        {
+            // Reproducir el sonido de caminar
+            audioSource.clip = walkingSound;
+            audioSource.loop = true; // Para que el sonido se repita mientras el jugador camina
+            audioSource.Play();
+        }
+
+        // Si el jugador no está caminando y el sonido está reproduciéndose
+        if (!estaCaminando && audioSource.isPlaying)
+        {
+            // Detener el sonido de caminar
+            audioSource.Stop();
+        }
+    }
 }
