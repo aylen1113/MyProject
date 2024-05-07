@@ -10,7 +10,7 @@ namespace interfaz
         //lógica para los botones usados dentro del juego
         public void Restart()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Game 1");
             Time.timeScale = 1f;
         }
         public void Menu()
@@ -19,7 +19,7 @@ namespace interfaz
         }
         public void PlayButton()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Game 1");
             Time.timeScale = 1f;
         }
         public void QuitGame()

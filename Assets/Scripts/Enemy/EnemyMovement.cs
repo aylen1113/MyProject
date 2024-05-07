@@ -13,6 +13,8 @@ public class EnemyMovement : MonoBehaviour
 
     private AudioSource playerAudioSource;
     [SerializeField] AudioClip enemyHitSound;
+
+    private bool isHit = false;
  
     void Start()
     {
@@ -23,14 +25,14 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-     
-        if (distanceToPlayer <= detectionDistance)
+        if (!isHit)
         {
-           
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+            if (distanceToPlayer <= detectionDistance)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            }
         }
     }
 
@@ -48,7 +50,18 @@ public class EnemyMovement : MonoBehaviour
                     playerAudioSource.PlayOneShot(enemyHitSound);
                 }
             }
-            speed = 0f;
+            StartCoroutine(StunEnemy());
         }
+    }
+
+    IEnumerator StunEnemy()
+    {
+        isHit = true;
+        speed = 0f;
+
+        yield return new WaitForSeconds(5f);
+
+        isHit = false;
+        speed = 8f;
     }
 }
