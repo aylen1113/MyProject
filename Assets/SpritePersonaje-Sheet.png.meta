@@ -108,91 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: SpritePersonaje-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 7
-        width: 36
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b27b06977bb18754298215008abe1f5a
-      internalID: -1594876662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritePersonaje-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 7
-        width: 36
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b4e0b5b8136df343bb38c4c48cc8abc
-      internalID: 60902708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritePersonaje-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 232
-        y: 7
-        width: 36
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59f5fd453770b464fbe4a764de765ce5
-      internalID: -780814612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritePersonaje-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 332
-        y: 7
-        width: 36
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b15ffbc25bb1c29498103bc5ff5445c2
-      internalID: 575248784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -203,11 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      SpritePersonaje-Sheet_0: -1594876662
-      SpritePersonaje-Sheet_1: 60902708
-      SpritePersonaje-Sheet_2: -780814612
-      SpritePersonaje-Sheet_3: 575248784
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,26 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public static PlayerInventory instance;
     public int NumberKeys { get; private set; }
+    public int keysRequired = 5; 
+
+    public UnityEvent<PlayerInventory> OnKeyCollected;
 
     public void KeyCollect()
     {
-
+        NumberKeys++;
+        OnKeyCollected.Invoke(this);
+      
 
     }
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Door"))
+        {
+      
+            CheckWinCondition();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+public void CheckWinCondition()
     {
-        
+        if (NumberKeys == keysRequired)
+        {
+           
+            Debug.Log("You win!");
+            SceneManager.LoadScene("VictoryScreen");
+
+        }
     }
 }
+
+
