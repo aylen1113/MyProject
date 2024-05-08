@@ -7,6 +7,12 @@ namespace interfaz
 {
     public class Botones : MonoBehaviour
     {
+
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        
         //lógica para los botones usados dentro del juego
         public void Restart()
         {
