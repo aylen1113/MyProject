@@ -23,6 +23,11 @@ namespace interfaz
         {
             SceneManager.LoadScene("Menú");
         }
+        public void Instructions()
+        {
+            SceneManager.LoadScene("Instructions");
+            Time.timeScale = 1f;
+        }
         public void PlayButton()
         {
             SceneManager.LoadScene("Game 1");
