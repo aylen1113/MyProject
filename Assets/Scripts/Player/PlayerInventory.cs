@@ -7,11 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [Header("LLaves")]
     public static PlayerInventory instance;
     public int NumberKeys { get; private set; }
     public int keysRequired = 5; 
 
     public UnityEvent<PlayerInventory> OnKeyCollected;
+
+    [Header("UI Dialogo")]
+    public Panel Panel;
 
     public void KeyCollect()
     {
@@ -27,7 +31,14 @@ public class PlayerInventory : MonoBehaviour
       
             CheckWinCondition();
         }
+
+        if (other.CompareTag("ZonaPuerta") && NumberKeys < keysRequired)
+        {
+            Panel.ActiveScreen();
+        }
     }
+
+
 
 
 public void CheckWinCondition()

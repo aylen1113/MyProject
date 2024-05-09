@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -23,11 +24,12 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     Vector3 Playermov;
 
-    public CharacterController controller;
+    //public CharacterController controller;
     private Vector2 playerMove;
 
     [SerializeField] AudioClip walkingSound;
     private AudioSource audioSource;
+
 
     private void Start()
     {
@@ -35,12 +37,15 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         animator = GetComponentInChildren<Animator>(); //esto es para la animación del pj!!
         audioSource = GetComponent<AudioSource>();
+        //Keys = GetComponent<PlayerInventory>();
     }
 
     private void Update()
     {
         playerMove = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
         animator.SetFloat("Speed", playerMove.magnitude);
+        //Keys = GameObject.Find(“NumberKeys”).GetComponent<PlayerInventory>();
+
     }
     private void FixedUpdate()
     {
