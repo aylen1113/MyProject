@@ -61,6 +61,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: 1bc5918bad873794ca7ee2f2a4cf5930, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 1bc5918bad873794ca7ee2f2a4cf5930, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 1bc5918bad873794ca7ee2f2a4cf5930, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d09868aaf5e6cc04b963e386ccc10aba, type: 2}
@@ -144,7 +152,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 6571ea2ffdee52542ac89fa967326dbe, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6e66576ed74a2e448a4ee1ef28443cbd, type: 2}
+      objectReference: {fileID: 2100000, guid: 637e2fcdb2ba10c499936bbb9bde0666, type: 2}
     - target: {fileID: 919132149155446097, guid: 6571ea2ffdee52542ac89fa967326dbe, type: 3}
       propertyPath: m_Name
       value: libros bien posicionados
