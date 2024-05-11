@@ -21,6 +21,9 @@ public class EnemyMovement : MonoBehaviour
     private Animator animator;
     private bool enemyRun = false;
 
+    private bool canDamage = true;
+    public float cooldownTime = 5f; 
+
     // NavMesh
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] bool followPlayer;
@@ -61,6 +64,8 @@ public class EnemyMovement : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage();
+                canDamage = false;
+                StartCoroutine(EnableDamageAfterCooldown());
 
                 if (enemyHitSound != null && playerAudioSource != null)
                 {
@@ -81,5 +86,10 @@ public class EnemyMovement : MonoBehaviour
 
         isHit = false;
         speed = 8f;
+    }
+    IEnumerator EnableDamageAfterCooldown()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canDamage = true;
     }
 }

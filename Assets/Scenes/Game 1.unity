@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8910,7 +8910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250966431}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.009052046, y: 0.8843021, z: -0.017158702, w: -0.4665121}
+  m_LocalRotation: {x: 0.014487132, y: -0.71667016, z: 0.014893782, w: 0.6971027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28734,6 +28734,7 @@ MonoBehaviour:
   detectionDistance: 15
   playerHealth: {fileID: 811411542}
   enemyHitSound: {fileID: 8300000, guid: 67cbca5d5d5a8af47b62986474f48386, type: 3}
+  cooldownTime: 5
   navMeshAgent: {fileID: 526840295}
   followPlayer: 1
 --- !u!136 &526840289
@@ -44637,8 +44638,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.009052045, y: 0.884302, z: -0.017158704, w: -0.46651208}
-  m_LocalPosition: {x: 4.3356323, y: 9.684, z: -104.41267}
+  m_LocalRotation: {x: 0.014487123, y: -0.7166702, z: 0.014893774, w: 0.69710267}
+  m_LocalPosition: {x: 5.409837, y: 9.683929, z: -110.25703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60831,7 +60832,7 @@ Transform:
   m_GameObject: {fileID: 1330617330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3356323, y: 9.684, z: -104.41267}
+  m_LocalPosition: {x: 5.9075074, y: 9.684, z: -110.257034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73025,7 +73026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492000000}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.009052044, y: 0.8843021, z: -0.0171587, w: -0.46651208}
+  m_LocalRotation: {x: 0.014487124, y: -0.7166702, z: 0.014893775, w: 0.6971027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -92151,7 +92152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852428070}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0005649309, y: 0.8844679, z: -0.0010708609, w: -0.46659958}
+  m_LocalRotation: {x: 0.0018047916, y: -0.7168225, z: 0.0018554515, w: 0.6972509}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -100024,6 +100025,7 @@ MonoBehaviour:
   detectionDistance: 15
   playerHealth: {fileID: 811411542}
   enemyHitSound: {fileID: 8300000, guid: 67cbca5d5d5a8af47b62986474f48386, type: 3}
+  cooldownTime: 5
   navMeshAgent: {fileID: 2031021057}
   followPlayer: 1
 --- !u!136 &2031021061
@@ -107356,7 +107358,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 390637962104773710, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.83
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 390637962104773710, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
       propertyPath: m_LocalPosition.y
@@ -107364,7 +107366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 390637962104773710, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -108.63
+      value: -110.45
       objectReference: {fileID: 0}
     - target: {fileID: 390637962104773710, guid: a5e98fea456be30409bae5a1e82cc314, type: 3}
       propertyPath: m_LocalRotation.w
