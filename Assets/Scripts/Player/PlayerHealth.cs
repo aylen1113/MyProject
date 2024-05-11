@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullPlushie;
     public Sprite emptyPlushie;
 
+    public Animator animator;
     private void Start()
     {
         currentLives = maxHealth;
@@ -79,7 +80,10 @@ public class PlayerHealth : MonoBehaviour
         {
             if ((currentLives + LivesHealer) > maxHealth)
             {
+                animator.SetTrigger("PlayerAbrazo");
+
                 currentLives = maxHealth;
+                
             }
             else
             {

@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 5f;
     public float detectionDistance = 5f; 
 
+
     private Transform playerTransform;
     public PlayerHealth playerHealth;
 
@@ -16,6 +17,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] AudioClip enemyHitSound;
 
     private bool isHit = false;
+
+    private Animator animator;
+    private bool enemyRun = false;
 
     // NavMesh
     [SerializeField] NavMeshAgent navMeshAgent;
@@ -26,6 +30,7 @@ public class EnemyMovement : MonoBehaviour
         playerTransform = FindObjectOfType<PlayerMovement>().transform;
         playerHealth = FindObjectOfType<PlayerHealth>();
         playerAudioSource = playerTransform.GetComponent<AudioSource>();
+        //animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -45,6 +50,7 @@ public class EnemyMovement : MonoBehaviour
     public void FollowPlayer()
     {
         navMeshAgent.destination = playerTransform.position;
+        //animator.SetBool("EnemyRun", true);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -61,6 +67,7 @@ public class EnemyMovement : MonoBehaviour
                     playerAudioSource.PlayOneShot(enemyHitSound);
                 }
             }
+            //animator.SetBool("EnemyRun", false);
             StartCoroutine(StunEnemy());
         }
     }
