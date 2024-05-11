@@ -30,7 +30,7 @@ namespace interfaz
         }
         public void PlayButton()
         {
-            SceneManager.LoadScene("Game 1");
+            SceneManager.LoadScene("Cutscene");
             Time.timeScale = 1f;
         }
         public void QuitGame()
