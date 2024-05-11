@@ -20,6 +20,12 @@ public class Key : MonoBehaviour
                 SoundController.instance.PlaySound(keySound);
                 Debug.Log("Sonido reproducido correctamente");
             }
+            Candado candado = FindObjectOfType<Candado>();
+            if (candado != null)
+            {
+                candado.AddKey();
+            }
+
 
             gameObject.SetActive(false);
 

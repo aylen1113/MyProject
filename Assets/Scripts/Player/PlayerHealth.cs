@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         currentLives = maxHealth;
+        //animator.SetBool("PlayerAbrazo", false);
     }
 
     private void Update()
@@ -84,7 +85,8 @@ public class PlayerHealth : MonoBehaviour
         {
             if ((currentLives + LivesHealer) > maxHealth)
             {
-                animator.SetBool("PlayerAbrazo", true);
+                //animator.SetBool("PlayerAbrazo", true);
+                GetComponent<Animator>().Play("PlayerAbrazo");
 
                 currentLives = maxHealth;
                 
@@ -92,12 +94,20 @@ public class PlayerHealth : MonoBehaviour
             else
             {
                 currentLives += LivesHealer;
-                animator.SetBool("PlayerAbrazo", false);
+                //animator.SetBool("PlayerAbrazo", false);
             }
             Debug.Log("El nuevo nivel de vida es:" + currentLives);
             //collision.gameObject.SetActive(false);
         }
+
+        {
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                animator.SetBool("PlayerAbrazo", false);
+            }
         Debug.Log("El nuevo nivel de vida es: " + currentLives);
         ChequeoPlushies();
     }
+      
+}
 }
