@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6722085885383957590, guid: 206785f88900a78479166a4ea70e5266, type: 3}
       propertyPath: m_Intensity
-      value: 15.27
+      value: 3.67
       objectReference: {fileID: 0}
     - target: {fileID: -447275898630060098, guid: 206785f88900a78479166a4ea70e5266, type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 206785f88900a78479166a4ea70e5266, type: 3}
       propertyPath: m_Name
-      value: VELA 1
+      value: VELA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
