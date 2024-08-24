@@ -6,27 +6,21 @@ using UnityEngine.AI;
 public class NewEnemyMovement : MonoBehaviour
 {
     [SerializeField] private float detectionDistance = 5f;
-     protected Transform playerTransform;
+    [SerializeField] protected Transform playerTransform;
 
     [Header("NavMesh")]
-    NavMeshAgent navMeshAgent;
+    [SerializeField] protected NavMeshAgent navMeshAgent;
 
 
 
     protected void Awake()
     {
-        playerTransform = FindObjectOfType<PlayerMovement>().transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
         EnemyMovement();
-    }
-
-    public void FollowTarget(Transform target)
-    {
-        navMeshAgent.destination = target.position;
     }
 
 
@@ -36,7 +30,7 @@ public class NewEnemyMovement : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, playerTransform.position) < detectionDistance)
             {
-                FollowTarget(playerTransform);
+                navMeshAgent.destination = playerTransform.position;
             }
             else
             {

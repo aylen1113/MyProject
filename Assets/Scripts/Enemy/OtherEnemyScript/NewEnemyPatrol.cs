@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NewEnemyPatrol : NewEnemyMovement
 {
@@ -25,13 +26,12 @@ public class NewEnemyPatrol : NewEnemyMovement
         {
             StartCoroutine(Wait());
         }
-        else gameObject.GetComponent<NewEnemyMovement>().FollowTarget(movementPoints[randomNumber]);
+        else navMeshAgent.destination = (movementPoints[randomNumber].position);
     }
 
     IEnumerator Wait()
     {
         isWaiting = true;
-        gameObject.GetComponent<NewEnemyMovement>().FollowTarget(transform);
 
         yield return new WaitForSeconds(waitTime);
 
