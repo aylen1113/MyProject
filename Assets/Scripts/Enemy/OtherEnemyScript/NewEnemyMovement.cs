@@ -5,15 +5,15 @@ using UnityEngine.AI;
 
 public class NewEnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float detectionDistance = 5f;
-    [SerializeField] protected Transform playerTransform;
+    [SerializeField] protected float detectionDistance = 5f;
+    public Transform playerTransform;
 
     [Header("NavMesh")]
-    [SerializeField] protected NavMeshAgent navMeshAgent;
+    protected NavMeshAgent navMeshAgent;
 
 
 
-    protected void Awake()
+    protected void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -28,15 +28,14 @@ public class NewEnemyMovement : MonoBehaviour
     {
         if (!gameObject.GetComponent<EnemyAttack>().isHit)
         {
-            if (Vector3.Distance(transform.position, playerTransform.position) < detectionDistance)
-            {
-                navMeshAgent.destination = playerTransform.position;
-            }
-            else
+            if (Vector3.Distance(transform.position, playerTransform.position) > detectionDistance)
             {
                 gameObject.GetComponent<NewEnemyPatrol>().EnemyPatrol();
             }
+            else 
+                navMeshAgent.destination = playerTransform.position;
         }
     }
-
 }
+
+

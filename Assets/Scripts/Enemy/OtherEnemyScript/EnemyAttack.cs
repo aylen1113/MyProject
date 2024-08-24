@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack :NewEnemyMovement
+public class EnemyAttack : MonoBehaviour
 {
     [Header("Audio")]
     public PlayerHealth playerHealth;
@@ -10,14 +10,16 @@ public class EnemyAttack :NewEnemyMovement
     [SerializeField] AudioClip enemyHitSound;
 
     [Header("Attack")]
-    public float cooldownTime = 5f;
+    public float cooldownTime = 2f;
     private bool canDamage = true;
     public bool isHit = false;
 
 
     private void Start()
     {
-        playerAudioSource = playerTransform.GetComponent<AudioSource>();
+        Transform player = gameObject.GetComponent<NewEnemyMovement>().playerTransform;
+        playerAudioSource = player.GetComponent<AudioSource>();
+
         playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
@@ -41,11 +43,11 @@ public class EnemyAttack :NewEnemyMovement
     IEnumerator StunAndDamageCooldown()
     {
         canDamage = false;
-        isHit = false;
+        isHit = true;
 
         yield return new WaitForSeconds(cooldownTime);
 
         canDamage = true;
-        isHit = true;
+        isHit = false;
     }
 }
