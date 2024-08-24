@@ -7,7 +7,7 @@ public class NewEnemyPatrol : NewEnemyMovement
 {
     [Header("Patrol")]
     [SerializeField] private Transform[] movementPoints;
-    [SerializeField] private float minDistance;
+    [SerializeField] private float minDistance = 3;
     [SerializeField] private int randomNumber;
 
     [SerializeField] private float waitTime;
@@ -22,29 +22,24 @@ public class NewEnemyPatrol : NewEnemyMovement
 
     public void EnemyPatrol()
     {
-        navMeshAgent.destination = (movementPoints[randomNumber].position);
+        Vector3 distanceToWaypoint = transform.position - movementPoints[randomNumber].position;
 
-        float distanceToPoint = Vector3.Distance(transform.position, movementPoints[randomNumber].position);
-
-        if (distanceToPoint < minDistance)
+        if (distanceToWaypoint.x < minDistance && !isWaiting)
         {
-            randomNumber = Random.Range(0, movementPoints.Length);
+            StartCoroutine(Wait());
         }
-
-
+        else navMeshAgent.destination = (movementPoints[randomNumber].position);
     }
 
-    /*
+    
     IEnumerator Wait()
     {
         isWaiting = true;
+        waitTime = Random.Range(0, 5);
 
         yield return new WaitForSeconds(waitTime);
 
         isWaiting = false;
         randomNumber = Random.Range(0, movementPoints.Length);
     }
-    */
-
-
 }

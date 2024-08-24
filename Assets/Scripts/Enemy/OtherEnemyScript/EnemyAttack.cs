@@ -26,16 +26,12 @@ public class EnemyAttack : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && playerHealth != null && canDamage)
         {
-            if (playerHealth != null && canDamage)
-            {
-                playerHealth.TakeDamage();
-                StartCoroutine(StunAndDamageCooldown());
-
-                playerAudioSource.PlayOneShot(enemyHitSound);
-            }
+            playerHealth.TakeDamage();
+            StartCoroutine(StunAndDamageCooldown());
+            
+            playerAudioSource.PlayOneShot(enemyHitSound);
         }
     }
 

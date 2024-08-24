@@ -1180,7 +1180,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1415,13 +1415,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856822671504ff34a9189f5c20d5dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionDistance: 5
+  detectionDistance: 20
   playerTransform: {fileID: 395324547}
   movementPoints:
   - {fileID: 20605555}
   - {fileID: 1534963851}
   - {fileID: 1371399437}
-  minDistance: 1
+  minDistance: 3
   randomNumber: 0
   waitTime: 2
 --- !u!114 &597827146

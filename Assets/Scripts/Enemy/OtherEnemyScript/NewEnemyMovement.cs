@@ -28,12 +28,14 @@ public class NewEnemyMovement : MonoBehaviour
     {
         if (!gameObject.GetComponent<EnemyAttack>().isHit)
         {
-            if (Vector3.Distance(transform.position, playerTransform.position) > detectionDistance)
+            Vector3 distanceToPlayer = transform.position - playerTransform.position;
+
+            if (distanceToPlayer.x < detectionDistance)
             {
-                gameObject.GetComponent<NewEnemyPatrol>().EnemyPatrol();
-            }
-            else 
                 navMeshAgent.destination = playerTransform.position;
+            }
+            else
+                gameObject.GetComponent<NewEnemyPatrol>().EnemyPatrol();
         }
     }
 }
