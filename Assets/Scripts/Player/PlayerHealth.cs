@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         ChequeoPlushies();
     }
 
+    
     void OnCollissionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -48,18 +49,14 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Damage");
         }
     }
+    
 
     public void TakeDamage()
     {
         currentLives--;
 
         if (currentLives <= 0)
-        {
             SceneManager.LoadScene("GameOverScreen");
-            Debug.Log("Game Over");
-
-        }
-
     }
 
     public void ChequeoPlushies()
@@ -99,15 +96,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("El nuevo nivel de vida es:" + currentLives);
             //collision.gameObject.SetActive(false);
         }
-
-        {
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                animator.SetBool("PlayerAbrazo", false);
-            }
         Debug.Log("El nuevo nivel de vida es: " + currentLives);
         ChequeoPlushies();
     }
-      
-}
 }

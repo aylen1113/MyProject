@@ -25,7 +25,6 @@ public class CameraControl : MonoBehaviour
 
         smoothMovement.x = Mathf.Lerp(smoothMovement.x, mouseDirection.x, 1f / smoothness);
         smoothMovement.y = Mathf.Lerp(smoothMovement.y, mouseDirection.y, 1f / smoothness);
-
         mouseMira += smoothMovement;
         mouseMira.y = Mathf.Clamp(mouseMira.y, -90f, 90);
         transform.localRotation = Quaternion.AngleAxis(-mouseMira.y, Vector3.right);

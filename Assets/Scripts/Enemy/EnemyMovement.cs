@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 5f;
     public float detectionDistance = 5f; 
 
 
@@ -22,11 +21,12 @@ public class EnemyMovement : MonoBehaviour
     private bool enemyRun = false;
 
     private bool canDamage = true;
-    public float cooldownTime = 5f; 
+    public float cooldownTime = 5f;
 
-    // NavMesh
+    [Header("NavMesh")]
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] bool followPlayer;
+
 
     void Start()
     {
@@ -44,7 +44,6 @@ public class EnemyMovement : MonoBehaviour
 
             if (distanceToPlayer <= detectionDistance && followPlayer)
             {
-                //transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
                 FollowPlayer();
             }
         }
@@ -61,10 +60,9 @@ public class EnemyMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (playerHealth != null)
+            if (playerHealth != null && canDamage)
             {
                 playerHealth.TakeDamage();
-                canDamage = false;
                 StartCoroutine(EnableDamageAfterCooldown());
 
                 if (enemyHitSound != null && playerAudioSource != null)
@@ -72,24 +70,30 @@ public class EnemyMovement : MonoBehaviour
                     playerAudioSource.PlayOneShot(enemyHitSound);
                 }
             }
+
             //animator.SetBool("EnemyRun", false);
             StartCoroutine(StunEnemy());
         }
     }
 
+
+    
     IEnumerator StunEnemy()
     {
         isHit = true;
-        speed = 0f;
 
         yield return new WaitForSeconds(5f);
 
         isHit = false;
-        speed = 8f;
     }
+
     IEnumerator EnableDamageAfterCooldown()
     {
+        canDamage = false;
+
         yield return new WaitForSeconds(cooldownTime);
+
         canDamage = true;
     }
+    
 }

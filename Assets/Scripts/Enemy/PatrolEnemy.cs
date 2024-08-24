@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PatrolEnemy : MonoBehaviour
 {
+    [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float waitTime;
-    [SerializeField] private float speed;
     private int currentWaypoint;
     private bool isWaiting;
 
@@ -14,7 +15,8 @@ public class PatrolEnemy : MonoBehaviour
     {
         if (transform.position != waypoints[currentWaypoint].position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, speed * Time.deltaTime);
+           // transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].position, speed * Time.deltaTime);ç
+            navMeshAgent.destination = waypoints[currentWaypoint].position;
         }
         else if (!isWaiting)
         {

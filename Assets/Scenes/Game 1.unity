@@ -28730,7 +28730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144cc2b7db6d25e4a93d6e409c5f5937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
   detectionDistance: 15
   playerHealth: {fileID: 811411542}
   enemyHitSound: {fileID: 8300000, guid: 67cbca5d5d5a8af47b62986474f48386, type: 3}
@@ -28769,7 +28768,7 @@ Transform:
   m_GameObject: {fileID: 526840287}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.59, y: 10.613, z: -77.17}
+  m_LocalPosition: {x: -1.59, y: 9.911, z: -77.17}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44639,11 +44638,11 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.014487123, y: -0.7166702, z: 0.014893774, w: 0.69710267}
-  m_LocalPosition: {x: 5.409837, y: 9.683929, z: -110.25703}
+  m_LocalPosition: {x: -0.49767065, y: -0.0000705719, z: 0.0000076293945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1330617332}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -60839,6 +60838,7 @@ Transform:
   - {fileID: 250966433}
   - {fileID: 1852428072}
   - {fileID: 1492000002}
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1330617333
@@ -100021,7 +100021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144cc2b7db6d25e4a93d6e409c5f5937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
   detectionDistance: 15
   playerHealth: {fileID: 811411542}
   enemyHitSound: {fileID: 8300000, guid: 67cbca5d5d5a8af47b62986474f48386, type: 3}
@@ -101334,7 +101333,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 247
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -101356,8 +101355,8 @@ Transform:
   m_GameObject: {fileID: 2096249597}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -79.17, y: 11.16, z: -100.25}
-  m_LocalScale: {x: 3.834125, y: 6.3917, z: 6.3917}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108076,7 +108075,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1377783501}
   - {fileID: 144490038}
-  - {fileID: 963194228}
   - {fileID: 1330617332}
   - {fileID: 289548165}
   - {fileID: 6856841409580642244}
