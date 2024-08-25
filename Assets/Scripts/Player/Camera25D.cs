@@ -8,13 +8,21 @@ public class Camera25D : MonoBehaviour
     [SerializeField] float sensitivity = 5f;
     private void LateUpdate()
     {
-        float mouseX = Input.GetAxis("Mouse X");
 
-        float additionalRotationY = mouseX * sensitivity;
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
-        float newYRotation = transform.rotation.eulerAngles.y + additionalRotationY;
+        //float mouseX = Input.GetAxis("Mouse X");
 
-        Quaternion newRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, newYRotation, transform.rotation.eulerAngles.z);
+        //float additionalRotationY = mouseX * sensitivity;
+
+        //float newYRotation = transform.rotation.eulerAngles.y + additionalRotationY;
+
+        float newYRotation = transform.rotation.eulerAngles.y + mouseY;
+
+        //Quaternion newRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, newYRotation, transform.rotation.eulerAngles.z);
+
+        Quaternion newRotation = Quaternion.Euler(0f, newYRotation, 0f);
 
         transform.rotation = newRotation;
 
