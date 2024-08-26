@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
 {
     public float detectionDistance = 5f; 
 
-
     private Transform playerTransform;
     public PlayerHealth playerHealth;
 
@@ -17,8 +16,8 @@ public class EnemyMovement : MonoBehaviour
 
     private bool isHit = false;
 
-    private Animator animator;
-    private bool enemyRun = false;
+    //private Animator animator;
+    //private bool enemyRun = false;
 
     private bool canDamage = true;
     public float cooldownTime = 5f;
@@ -46,6 +45,8 @@ public class EnemyMovement : MonoBehaviour
             {
                 FollowPlayer();
             }
+            else
+                gameObject.GetComponent<PatrolEnemy>().Patrol();
         }
     }
 
@@ -64,11 +65,8 @@ public class EnemyMovement : MonoBehaviour
             {
                 playerHealth.TakeDamage();
                 StartCoroutine(EnableDamageAfterCooldown());
-
-                if (enemyHitSound != null && playerAudioSource != null)
-                {
-                    playerAudioSource.PlayOneShot(enemyHitSound);
-                }
+                
+                playerAudioSource.PlayOneShot(enemyHitSound);
             }
 
             //animator.SetBool("EnemyRun", false);
@@ -95,5 +93,4 @@ public class EnemyMovement : MonoBehaviour
 
         canDamage = true;
     }
-    
 }

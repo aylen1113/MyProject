@@ -1160,9 +1160,6 @@ GameObject:
   - component: {fileID: 597827139}
   - component: {fileID: 597827138}
   - component: {fileID: 597827137}
-  - component: {fileID: 597827147}
-  - component: {fileID: 597827146}
-  - component: {fileID: 597827145}
   m_Layer: 0
   m_Name: Enemy_Patrol (1)
   m_TagString: Enemy
@@ -1403,57 +1400,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &597827145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597827135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 856822671504ff34a9189f5c20d5dd50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionDistance: 20
-  playerTransform: {fileID: 395324547}
-  movementPoints:
-  - {fileID: 20605555}
-  - {fileID: 1534963851}
-  - {fileID: 1371399437}
-  minDistance: 3
-  randomNumber: 0
-  waitTime: 2
---- !u!114 &597827146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597827135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6599e2ce290804c9ecb08432cbc52f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionDistance: 5
-  playerTransform: {fileID: 395324547}
---- !u!114 &597827147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597827135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 622b4606753ba3d47a1c8e066d1cf911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 395324542}
-  enemyHitSound: {fileID: 8300000, guid: 67cbca5d5d5a8af47b62986474f48386, type: 3}
-  cooldownTime: 5
-  isHit: 0
 --- !u!1 &612415350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,6 +2980,7 @@ MonoBehaviour:
   - {fileID: 20605555}
   - {fileID: 1534963851}
   waitTime: 0
+  stoppingDistance: 0.5
 --- !u!195 &1645859814
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -13,17 +13,15 @@ public class PatrolEnemy : MonoBehaviour
     private int currentWaypoint = 0;
     private bool isWaiting = false;
 
-    void Update()
-    {
 
+    public void Patrol()
+    {
         if (Vector3.Distance(transform.position, waypoints[currentWaypoint].position) > stoppingDistance)
         {
-            
             navMeshAgent.destination = waypoints[currentWaypoint].position;
         }
         else if (!isWaiting)
         {
-     
             StartCoroutine(Wait());
         }
     }
