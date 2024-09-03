@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28840,7 +28840,7 @@ GameObject:
   - component: {fileID: 526840297}
   - component: {fileID: 526840298}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: MADRE_enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44783,7 +44783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.014686532, y: -0.71602285, z: 0.015070942, w: 0.6977596}
+  m_LocalRotation: {x: 0.0146865295, y: -0.71602285, z: 0.015070939, w: 0.6977596}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -92996,7 +92996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852428070}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.014686532, y: -0.71602285, z: 0.015070939, w: 0.6977596}
+  m_LocalRotation: {x: 0.01468653, y: -0.71602285, z: 0.015070937, w: 0.6977596}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -100911,7 +100911,7 @@ GameObject:
   - component: {fileID: 2031021065}
   - component: {fileID: 2031021066}
   m_Layer: 0
-  m_Name: Enemy (1)
+  m_Name: PADRE_enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109416,7 +109416,6 @@ SceneRoots:
   - {fileID: 646695853}
   - {fileID: 334704169}
   - {fileID: 2040369465}
-  - {fileID: 2031021064}
   - {fileID: 598213510}
   - {fileID: 1896017529}
   - {fileID: 1453699666}
@@ -109503,5 +109502,6 @@ SceneRoots:
   - {fileID: 1526867665}
   - {fileID: 1769432933}
   - {fileID: 727753734}
+  - {fileID: 2031021064}
   - {fileID: 526840292}
   - {fileID: 549614942}
